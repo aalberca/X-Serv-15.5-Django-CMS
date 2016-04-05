@@ -2,13 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from models import Pages
 
-
 # Create your views here.
 
 def pagina(request, identificador):
 
     try:
-        pag = Pages.objects.get(id = int(identificador))
+        pag = Pages.objets.get(id = int(identificador))
         respuesta = pag.page
     except Pages.DoesNotExist:
         respuesta = "No existe ese nombre con contenidos en la base de datos"
